@@ -1,0 +1,53 @@
+<section class="register" style="width: 432px">
+  <div class="header">
+    <div class="ml-96" style="position: absolute; ">
+      <button mat-icon-button (click)="close()" class="mat-18">
+        <mat-icon class="mat-18">close</mat-icon>
+      </button>
+    </div>
+    <h3>Sign Up</h3>
+    <p>It's quick and easy</p>
+  </div>
+    <div class="body">
+      <form>
+        <div class="user-name">
+          <input aria-label="FirstName" type="text" placeholder="FirstName" name="fname" ngModel required>
+          <input aria-label="LastName" type="text" placeholder="LastName" name="Lname" ngModel required>
+        </div>
+
+        <div class="email-password">
+          <input aria-label="email" type="text" placeholder="Your Email Address" name="email" ngModel required>
+          <input aria-label="password" type="password" placeholder="New Password" name="password" ngModel required>
+        </div>
+
+        <div class="date-picker">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <p>By clicking Sign Up, you agree to our <a href="#"
+                                                    style="font-weight: bold">Terms</a>, <a href="#"
+                                                                                            style="font-weight: bold">Data
+          Policy</a> and <a href=""
+                            style="font-weight: bold">Cookie Policy</a>. You may receive SMS notifications from us
+          and can opt out at any time.</p>
+
+        <button
+          type="submit"
+          class="submit-button"
+          mat-flat-button
+          color="green"
+          [mat-dialog-close]="form.value">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+</section>
+
+

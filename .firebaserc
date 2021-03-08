@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "socialmediaclone-fb": {
+      "hosting": {
+        "clone-social-media": [
+          "socialmediaclone-fb"
+        ]
+      }
+    }
+  }
+}
