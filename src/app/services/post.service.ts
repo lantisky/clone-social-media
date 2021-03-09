@@ -12,7 +12,7 @@ import User = firebase.User;
   providedIn: 'root'
 })
 export class PostService {
-  currentUser!: User;
+  currentUser: User | any = {};
 
   constructor(private afs: AngularFirestore,
               private afAuth: AngularFireAuth,

@@ -23,6 +23,7 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth,
               private router: Router,
               private afs: AngularFirestore) {
+    // @ts-ignore
     this._userData = afAuth.authState;
 
     this._userData.subscribe(user => {

@@ -1,0 +1,215 @@
+<ng-container class="home-container">
+  <div class="home__header">
+    <div class="home__header__left">
+      <div class="banner__logo">
+        <a aria-label="Facebook"
+           href="/home" role="link" tabindex="0">
+          <svg viewBox="0 0 36 36" fill="url(#jsc_s_7)" height="40"
+               width="40">
+            <defs>
+              <linearGradient x1="50%" x2="50%" y1="97.0782153%" y2="0%" id="jsc_s_7">
+                <stop offset="0%" stop-color="#0062E0"></stop>
+                <stop offset="100%" stop-color="#19AFFF"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"></path>
+            <path class="absolute"
+                  d="M25 23l.8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="input">
+
+        <mat-form-field>
+          <mat-icon class="absolute text-xl search-icon"
+                    style="
+                    top: 12px;
+                    left: 10px;
+                    color: #828890;
+                    /*position: absolute;*/
+                    /*font-size: x-large;*/
+"> search_outline
+          </mat-icon>
+          <input placeholder="Search Facebook" type="text">
+        </mat-form-field>
+      </div>
+
+      <div class="home__header__middle">
+        <div class="active">
+          <mat-icon>home</mat-icon>
+        </div>
+        <div>
+          <mat-icon>ondemand_video</mat-icon>
+        </div>
+        <div>
+          <mat-icon>store</mat-icon>
+        </div>
+        <div>
+          <mat-icon>group</mat-icon>
+        </div>
+        <div>
+          <mat-icon>flag</mat-icon>
+        </div>
+      </div>
+      <div class="home__header__right">
+        <div>
+          <img alt="" mat-card-avatar [src]="user?.avatar">
+          <span class="name">{{user?.firstName || 'Kys'}}</span>
+        </div>
+        <div>
+          <mat-icon>add</mat-icon>
+        </div>
+
+        <div>
+          <mat-icon
+            matBadge="3"
+            matBadgeColor="warn"
+            matBadgeOverlap="false"
+            matBadgePosition="above after">
+            notifications
+          </mat-icon>
+        </div>
+
+        <div>
+          <mat-icon [matMenuTriggerFor]="menu"
+          >expand_more
+          </mat-icon>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Logout
+            </button>
+          </mat-menu>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="home__body">
+    <div class="home__body__sidebarLeft">
+      <div class="inside">
+        <div class="user-avatar">
+          <img alt="" mat-card-avatar src="{{ user?.avatar }}">
+          <span class="name">
+                {{user?.firstName || 'Kys'}} {{user?.lastName}}
+              </span>
+        </div>
+
+        <div>
+          <mat-icon>
+            local_hospital
+          </mat-icon>
+          <span class="covid">COVID-19 Information Center</span>
+        </div>
+
+        <div>
+          <mat-icon>flag</mat-icon>
+          <span>Pages</span>
+        </div>
+
+        <div>
+          <mat-icon>people</mat-icon>
+          <span>Friends</span>
+        </div>
+
+        <div>
+          <mat-icon>chat</mat-icon>
+          <span>Messenger</span>
+        </div>
+
+        <div>
+          <mat-icon>store</mat-icon>
+          <span>Marketplace</span>
+        </div>
+
+        <div>
+          <mat-icon>video_library</mat-icon>
+          <span>Videos</span>
+        </div>
+
+        <div>
+          <mat-icon class="see-more">expand_more</mat-icon>
+          <span>See More</span>
+        </div>
+
+      </div>
+    </div>
+    <!--   Side bar end here   -->
+
+    <div class="home__body__contentMiddle">
+      <div class="home__body__contentMiddle__top">
+        <mat-card *ngFor="let i of images" class="image-card">
+          <img src="{{ i }}" alt="bg" class="bg">
+          <mat-card-content>
+            <img src="https://pbs.twimg.com/profile_images/1352975104251105288/Y7WFAAmH_400x400.jpg"
+                 alt="avatar"
+                 class="avatar w-10 h-10 rounded-full absolute top-2.5 left-2.5"
+                 style="
+                 color: white;
+                 z-index: 99;
+                ">
+            <span class="card-name">Kys L</span>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!--        home body middle content end here       -->
+      <div class="home__body__contentMiddle__center">
+        <mat-card class="post-message">
+          <mat-card-header class="post-message-header"
+                           style="padding-bottom: 20px; border-bottom: 1px solid lightgrey">
+            <img [src]="user?.avatar" alt="" mat-card-avatar>
+            <form action="" #form="ngForm" (ngSubmit)="postMessage(form)">
+              <input type="text"
+                     ngModel
+                     class="on-your-mind"
+                     name="message"
+                     placeholder="What's on your mind? ">
+              <button style="display: none;" type="submit"></button>
+            </form>
+
+          </mat-card-header>
+          <mat-card-content class="card-body">
+            <div>
+              <mat-icon color="accent">videocam</mat-icon>
+              <span>Live Video</span>
+            </div>
+
+            <div>
+              <mat-icon color="primary">photo_album</mat-icon>
+              <span>Photo/Video</span>
+            </div>
+
+            <div>
+              <mat-icon color="warn">moon</mat-icon>
+              <span>Feeling/Activity</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+        <mat-card *ngFor="let p of posts" class="posts">
+          <mat-card-header class="posts__header">
+            <img [src]="p?.avatar" alt="{{ p?.title }}" mat-card-avatar>
+            <div class="posts__header__right">
+              <span>{{ p?.time?.seconds * 1000 | date:'shortTime' }}</span>
+              <h3>{{ p?.title }}</h3>
+            </div>
+          </mat-card-header>
+          <mat-card-content class="posts__body">
+            <p>{{ p?.message }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+
+    <div class="home__body__feedRight">
+      <div class="inside">
+        <img src="" alt="feed">
+      </div>
+    </div>
+  </div>
+
+
+</ng-container>
