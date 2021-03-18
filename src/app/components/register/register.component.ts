@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 interface Day {
-  value: any;
+	value: any;
   viewValue: any;
 }
 @Component({

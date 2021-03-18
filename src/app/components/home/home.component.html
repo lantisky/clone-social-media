@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="home.component.scss">
 <ng-container class="home-container">
   <div class="home__header">
     <div class="home__header__left">
@@ -35,7 +36,7 @@
         </mat-form-field>
       </div>
 
-      <div class="home__header__middle">
+      <div class="home__header__middle justify-between">
         <div class="active">
           <mat-icon>home</mat-icon>
         </div>
@@ -52,7 +53,7 @@
           <mat-icon>flag</mat-icon>
         </div>
       </div>
-      <div class="home__header__right">
+      <div class="home__header__right justify-end">
         <div>
           <img alt="" mat-card-avatar [src]="user?.avatar">
           <span class="name">{{user?.firstName || 'Kys'}}</span>

@@ -38,7 +38,7 @@
         border: 1px solid lightgrey;
         background-color: #F0F2F5;
         padding: 10px 40px;
-        border-radius: 10px;
+        border-radius: 9999px;
 
         &::placeholder {
           padding-left: 20px;
@@ -52,6 +52,7 @@
   &__middle {
     padding: 10px;
     height: 100%;
+    margin-left: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
